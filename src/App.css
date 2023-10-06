@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  color: whitesmoke;
+  background-color: rgb(37, 37, 37);
+  font-family: Montserrat, Lato, Roboto, sans-serif;
+}
+
+.main {
+  min-height: 100vh;
+  display: grid;
+}
+
+.tareasAppContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* listaPrincipal */
+
+.listaPrincipal {
+  width: 600px;
+  min-height: 500px;
+  background-color: rgba(245, 245, 245, 0.8);
+  padding: 25px;
+  margin: 10px;
+  border-radius: 15px;
+}

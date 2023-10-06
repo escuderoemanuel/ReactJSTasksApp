@@ -1,0 +1,34 @@
+.tareaForm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+}
+
+.tareaInput {
+  width: 350px;
+  font-size: 18px;
+  background-color: whitesmoke;
+  padding: 14px 32px 14px 16px;
+  border-radius: 8px 0 0 8px;
+  border: none;
+  outline: none;
+}
+
+.btnTarea {
+  padding: 14.5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  outline: none;
+  background-color: #373737;
+  color: whitesmoke;
+  text-transform: capitalize;
+  transition: all ease-in-out 150ms;
+}
+
+.btnTarea:hover {
+  transform: scale(1.05);
+}

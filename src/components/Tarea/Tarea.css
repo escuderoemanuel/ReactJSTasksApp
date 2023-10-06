@@ -1,0 +1,43 @@
+.tareaContainer {
+  width: 500px;
+  min-height: 60px;
+  background-color: #474747;
+  margin: 5px 0;
+  padding: 8px 15px 8px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  border-radius: 8px;
+}
+
+.tareaText {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  overflow-wrap: anywhere;
+}
+
+.tareaIcon {
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+}
+
+.tareaIcon:hover {
+  transform: scale(1.05);
+}
+
+.tareaIcon.complete:hover {
+  color: palegreen;
+}
+
+.tareaIcon.delete:hover {
+  color: orangered;
+}
+.tareaContainer.completada {
+  background-color: #318169;
+  text-decoration: line-through;
+}
