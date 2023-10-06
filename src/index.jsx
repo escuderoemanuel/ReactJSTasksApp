@@ -4,7 +4,6 @@ import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  // Al incluir <React.StrictMode> el localStorage se limpia
+  <App />
 );

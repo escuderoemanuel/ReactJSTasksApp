@@ -1,11 +1,22 @@
 import TareaForm from '../TareaForm/TareaForm';
 import Tarea from '../Tarea/Tarea';
 import './ListaTareas.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function ListaTareas() {
   //El estado inicial de tareas es un array vacío
   const [tareas, setTareas] = useState([]);
+
+  // Cargar tareas desde el localStorage cuando se monta el componente
+  useEffect(() => {
+    const tareasGuardadas = JSON.parse(localStorage.getItem('tareas')) || [];
+    setTareas(tareasGuardadas);
+  }, []);
+
+  // Guardar tareas en el localStorage como cadena JSON
+  useEffect(() => {
+    localStorage.setItem('tareas', JSON.stringify(tareas));
+  }, [tareas]);
 
   const agregarTarea = (tarea) => {
     if (tarea.texto.trim()) {
@@ -29,9 +40,9 @@ function ListaTareas() {
       }
       return tarea;
     });
-    //JSON.stringify();
     setTareas(tareasActualizadas);
   };
+
   return (
     <>
       <TareaForm onSubmit={agregarTarea} />
