@@ -5,13 +5,10 @@ import { useEffect, useState } from 'react';
 
 function ListaTareas() {
   //El estado inicial de tareas es un array vacío
-  const [tareas, setTareas] = useState([]);
-
-  // Cargar tareas desde el localStorage cuando se monta el componente
-  useEffect(() => {
-    const tareasGuardadas = JSON.parse(localStorage.getItem('tareas')) || [];
-    setTareas(tareasGuardadas);
-  }, []);
+  const [tareas, setTareas] = useState(
+    // Cargar tareas desde el localStorage si las hay
+    JSON.parse(localStorage.getItem('tareas'))
+  );
 
   // Guardar tareas en el localStorage como cadena JSON
   useEffect(() => {
