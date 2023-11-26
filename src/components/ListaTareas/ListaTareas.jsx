@@ -7,7 +7,7 @@ function ListaTareas() {
   //El estado inicial de tareas es un array vacío
   const [tareas, setTareas] = useState(
     // Cargar tareas desde el localStorage si las hay
-    JSON.parse(localStorage.getItem('tareas'))
+    JSON.parse(localStorage.getItem('tareas')) ?? []
   );
 
   // Guardar tareas en el localStorage como cadena JSON
@@ -17,11 +17,12 @@ function ListaTareas() {
 
   const agregarTarea = (tarea) => {
     if (tarea.texto.trim()) {
-      tarea.texto = tarea.texto.trim();
-      const tareasActualizadas = [tarea, ...tareas];
+      const tareaActualizada = { ...tarea, texto: tarea.texto.trim() };
+      const tareasActualizadas = [tareaActualizada, ...tareas];
       setTareas(tareasActualizadas);
     }
   };
+
 
   const eliminarTarea = (id) => {
     const tareasActualizadas = tareas.filter((tarea) => tarea.id !== id);
@@ -43,7 +44,7 @@ function ListaTareas() {
   return (
     <>
       <TareaForm onSubmit={agregarTarea} />
-      <div className='containerListaTarea'>
+      {tareas && <div className='containerListaTarea'>
         {tareas.map((tarea) => (
           <Tarea
             key={tarea.id}
@@ -54,7 +55,7 @@ function ListaTareas() {
             eliminarTarea={eliminarTarea}
           />
         ))}
-      </div>
+      </div>}
     </>
   );
 }
