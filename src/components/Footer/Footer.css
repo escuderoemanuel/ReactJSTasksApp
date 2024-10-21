@@ -20,7 +20,7 @@
 }
 
 .footerContainer {
-  padding: 1.5rem 0;
+  padding: 1rem 0 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,6 +32,14 @@
 }
 
 .logoDev {
-  width: 26px;
-  transform: translateY(3px);
+  height: 24px;
+  width: auto;
+  transition: all ease 200ms;
+}
+
+.logoDev:hover {
+  cursor: pointer;
+  height: 24px;
+  width: auto;
+  transform: scale(1.05) rotate(7deg);
 }
